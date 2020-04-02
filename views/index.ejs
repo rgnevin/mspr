@@ -1,0 +1,55 @@
+<%- include ("./partials/header") %>
+
+<div class="jumbotron">
+    <h1>MSP C-19 Restaurant Survival</h1>
+</div>
+
+<!-- navigation search bar maybe swith to a form  -->
+<nav class="nav navbar navbar-expand-md navbar-light" style="background-color: #e3f2fd;">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Type</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">American</a>
+                    <a class="dropdown-item" href="#">European</a>
+                    <a class="dropdown-item" href="#">Asian</a>   
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Neighboorhood</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">MPLS NE</a>
+                    <a class="dropdown-item" href="#">MPLS N</a>
+                    <a class="dropdown-item" href="#">MPLS S</a>   
+                </div>
+            </li>
+            <input type="text">
+            <button>Submit</button>
+        </ul>
+    </div>
+</nav>
+
+
+
+<!-- show results -->
+<div class="container">
+    <div class="row" >
+        <% restaurants.forEach(function(restaurant){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="card">   
+                <img class="card-image-top" src="<%=restaurant.image%>" alt="">       
+                <div class="card-body">
+                    <h5 class="card-title"><%= restaurant.name %></h5>
+                </div>
+            </div>
+        </div>
+        <%});%>
+    </div>
+</div>
+
+
+
+
+
+<%- include ("./partials/footer") %>

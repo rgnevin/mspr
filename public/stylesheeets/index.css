@@ -1,0 +1,29 @@
+body{
+    background-color: slateblue;
+    color: snow;
+}
+
+.jumbotron{
+    background-color: darkblue;
+    text-align: center;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    border: black solid 2px;
+    background-color: lightskyblue;
+    margin: auto;
+    height: 22rem;
+    radius: 10px;
+    margin: 1rem;
+}
+.card-image-top{
+    max-width: 100%;
+    max-height: 18rem;
+    /* height: auto; */
+    
+}
