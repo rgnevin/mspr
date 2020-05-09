@@ -1,0 +1,146 @@
+body{
+    background-color: #001935;
+    color: black;
+    justify-content: center;
+}
+h1{
+    font-size: 100px;
+}
+.title-cont{
+    max-width: 100%; 
+    width: 100%;
+    margin: 0 0 0 0;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+}
+table{
+    text-align: left;
+}
+.show-cont{
+    display: flex;
+    text-align: center;
+    background-color: lightblue;
+}
+
+.sidebar{
+    text-align: center;
+    background-color: lightblue;
+    height:auto;
+}
+.showrow{
+    justify-content: space-between;
+}
+
+.lead{
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.img-thumbnail{
+    max-height: 30rem;
+}
+.jumbotron{
+    background-color:lightblue;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 20px;
+    width: auto;    
+}
+
+#search-bar{
+    background-color: lightblue;
+    
+}
+#search-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.search-item{
+    width:15rem;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-deck{
+    justify-content:center;
+}
+.card{
+    /* border: black solid 2px; */
+    background-color: lightblue;
+    margin: 1rem;
+    min-width: 20rem;
+    max-width: 20rem;
+    
+}
+.card:hover{
+        transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+        transition: 500ms;
+
+}
+.card-body{
+    line-height: .3;
+}
+.card-image-top{
+    /* max-width: 20rem; */
+    max-height: 18rem;
+    /* height: auto; */
+    /* width: 20rem; */
+}
+#newCont{
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+
+}
+#newCont2{
+    background-color: lightblue;
+    border-radius: 10px;
+    padding-bottom: 1rem;
+}
+#newForm{
+    width: 40%;
+    border-radius: 10px;  
+    margin: auto;
+    padding: 10px;
+    background-color: lightblue;
+
+}
+
+#delivCheck{
+    width: 3rem;
+}
+.new-item{
+    width: 25%;
+}
+.form-group{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+}
+label{
+    padding-right: 10px;
+    display: inline;
+}
+
+.rest-cont{
+    max-width: 90%;
+}
+
+.card-body p{
+    font-weight: 100;
+    font-size: 14px;
+}
+/* maps stuff */
+#map{
+    height: 400px;
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+
+<!-- navigation search bar maybe swith to a form  -->
+<div class="container" id="search-bar">
+    <form id="search-form" action="/restaurants/search" method="POST">
+        <div class="form-group search-item">
+            <label for="neigh-select">Neighbood</label>
+                <select class="form-control " id="neigh-select" name="neigh" selected="<%=neigh%>">
+                <option>Any</option>
+                <option>MPLS SE</option>
+                <option>MPLS SW</option>
+                <option>MPLS NE</option>
+                <option>MPLS N</option>
+                <option>STP E</option>
+                <option>STP W</option>
+            </select>
+        </div>
+        <div class="form-group search-item">
+            <label for="cuisine-select">Cuisine</label>
+                <select class="form-control" id="cuisine-select" name="cuisine" selected="<%=cuisine%>">
+                <option>Any</option>
+                <option>American</option>
+                <option>European</option>
+                <option>Asian</option>
+                <option>African</option>
+                <option>Middle Eastern</option>
+                <option>South/Central American</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-large btn-primary">Search</button>
+    </form>
+</div>

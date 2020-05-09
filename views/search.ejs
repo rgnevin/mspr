@@ -1,17 +1,19 @@
 <%- include ("./partials/header") %>
 <%- include ("./partials/searchbar") %>
 
-<!-- show results -->
-<div class="container rest-cont">
-    <!-- <div class="row" > -->
-        <div class="card-deck">
-        <% restaurants.forEach(function(restaurant){ %>
-        
+<div class="container">
+    <div class="card-deck" >
+        <% restaurants.forEach(function(restaurant){ %> 
+            <%console.log(cuisine1)%>
+            <%console.log(neigh1)%>
+        <%  if (((restaurant.cuisine === cuisine1) || (cuisine1==="any")) && ((restaurant.neigh === neigh1))||(neigh1 === "any")){ %>
+            <%console.log("divider")%>
+            <%console.log(restaurant.cuisine )%>
             <div class="card">   
                 <img class="card-image-top" src="<%=restaurant.image%>" alt="">       
                 <div class="card-body">
                     <h5 class="card-title"><%= restaurant.name %> </h5>
-                    <a href="restaurants/<%=restaurant._id%>" class="stretched-link"></a>
+                    <a href="/restaurants/<%=restaurant._id%>" class="stretched-link"></a>
                     <p class="card-text"><%=restaurant.cuisine%></p>
                     <p class="card-text"><%=restaurant.hours%></p>
                     <p class="card-text"><%=restaurant.phone%></p>
@@ -20,13 +22,10 @@
                    <% }%>
                 </div>
             </div>
+            <%}%>
         <%});%>
     </div>
-    <!-- </div> -->
 </div>
-
-
-
 
 
 <%- include ("./partials/footer") %>

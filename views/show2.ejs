@@ -1,0 +1,78 @@
+<%- include ("./partials/header") %>
+
+<div class="container show-cont2">
+    <div class="row showrow">
+        <div class="sidebar col-md-3">
+            <p class="lead"><a target="blank" href=<%=restaurant.siteLink %> ><%=restaurant.name%></a></p>
+
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td>Delivery:</td>
+                            <%if(restaurant.deliv){%>
+                                <td>Yes</td>
+                           <% }else{%>
+                                <td>No</td>
+                           <% }%>
+                        </tr>
+                        <tr>
+                            <td>Hours:</td>
+                            <td><%=restaurant.hours%></td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td><%=restaurant.phone%></td>
+                        </tr>
+                        <tr>
+                            <td>Menu:</td>
+                            <td><a href=<%=restaurant.siteLink%> >Click Here!</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+        <div class="show-cont col-md-5">
+            <div class="thumbnail">
+                <img class="img-fluid img-thumbnail" src="<%=restaurant.image%>" alt="">
+                <div class="caption-full">
+                    <p><%=restaurant.description%></p>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar col-md-3">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var map;
+    function initMap() {
+        var lat = <%= restaurant.lat %>;
+    var lng = <%= restaurant.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 13,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= restaurant.name %><br />
+      <%= restaurant.location %></strong>
+      <p><%= restaurant.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBfJsQHqboM3mDDMkQ0nFYvPb1yfiDqs0&callback=initMap"
+  async defer></script>
+
+<%- include ("./partials/footer") %>
